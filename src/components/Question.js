@@ -6,7 +6,9 @@ export const Question = ({ question }) => {
     <>
       <StyledTitle variant="subtitle">{question.title}</StyledTitle>
       {question.answers.map((answer) => {
-        return <Answer key={answer.option} answer={answer} />;
+        return (
+          <Answer key={answer.option} answer={answer} question={question} />
+        );
       })}
     </>
   );

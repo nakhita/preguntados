@@ -5,6 +5,7 @@ const QuestionContext = createContext({});
 
 const actions = {
   SET_QUESTIONS: "set-questions",
+  SET_STATUS: "set-status",
 };
 
 const initialState = {
@@ -14,7 +15,21 @@ const initialState = {
 const reducer = (state, action) => {
   switch (action.type) {
     case actions.SET_QUESTIONS: {
-      state.questions = action.payload;
+      const newData = action.payload.map((item) => ({
+        ...item,
+        status: "question",
+      }));
+      state.questions = newData;
+
+      return;
+    }
+    case actions.SET_STATUS: {
+      const question = state.questions.find(
+        (element) => element.number === action.payload.number
+      );
+      if (question) {
+        question.status = action.payload.status;
+      }
       return;
     }
     default:

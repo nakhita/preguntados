@@ -14,12 +14,23 @@ export const StyledButton = styled.button`
   padding-top: 5px;
   padding-bottom: 10px;
   cursor: pointer;
+  background-color: ${(props) =>
+    props.variant === "correct"
+      ? "green"
+      : props.variant === "incorrect"
+      ? "red"
+      : "white"};
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
   transition: all 0.3s ease 0s;
   margin: 15px;
 
   &:hover {
-    background-color: aliceblue;
+    background-color: ${(props) =>
+      props.variant === "correct"
+        ? "rgba(0, 255, 0, 0.5)"
+        : props.variant === "incorrect"
+        ? "rgba(255, 0, 0, 0.5)"
+        : "aliceblue"};
   }
   &:active {
     animation-direction: reverse;
