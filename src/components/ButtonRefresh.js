@@ -1,19 +1,19 @@
 import { useContext } from "react";
-import { StyledButtonNext } from "./Button/StyledButtonNext";
-import { GrNext, GrRefresh } from "react-icons/gr";
+import { StyledButtonRefresh } from "./Button/StyledButtonRefresh";
+import { GrRefresh } from "react-icons/gr";
 import QuestionContext, { actions } from "../context/questionContext";
-export const ButtonNext = () => {
+export const ButtonRefresh = () => {
   const [state, dispatch] = useContext(QuestionContext);
   return (
-    <StyledButtonNext
+    <StyledButtonRefresh
       onClick={(e) => {
         dispatch({
-          type: actions.SET_NEXT_QUESTION,
+          type: actions.RESET_STATE,
           payload: {},
         });
       }}
     >
-      <GrNext></GrNext>
-    </StyledButtonNext>
+      <GrRefresh></GrRefresh>
+    </StyledButtonRefresh>
   );
 };

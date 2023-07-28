@@ -5,7 +5,7 @@ const animacion = keyframes`
       width: 9%;
     }
   `;
-export const StyledButtonNext = styled.button`
+export const StyledButtonRefresh = styled.button`
   width: 10%;
   border: 2px solid;
   border-radius: 10px;
@@ -16,9 +16,10 @@ export const StyledButtonNext = styled.button`
   transition: all 0.3s ease 0s;
   margin: 15px;
   margin-left: auto;
+  background-color: #f999f5;
 
   &:hover {
-    background-color: aliceblue;
+    background-color: #ef94eb;
   }
   &:active {
     animation-direction: reverse;

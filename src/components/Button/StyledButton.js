@@ -16,10 +16,10 @@ export const StyledButton = styled.button`
   cursor: ${(props) => (props.disabled === false ? "pointer" : "not-allowed")};
   background-color: ${(props) =>
     props.variant === "correct"
-      ? "green"
+      ? "#84c3c8"
       : props.variant === "incorrect"
-      ? "red"
-      : "white"};
+      ? "#f8d9d6"
+      : "#f4f4e1"};
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
   transition: all 0.3s ease 0s;
   margin: 15px;

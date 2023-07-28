@@ -6,11 +6,15 @@ const QuestionContext = createContext({});
 const actions = {
   SET_QUESTIONS: "set-questions",
   SET_STATUS: "set-status",
-  GET_STATUS: "get-status",
+  SET_NEXT_QUESTION: "set-next-question",
+  RESET_STATE: "reset-state",
 };
 
 const initialState = {
   questions: [],
+  actualQuestionIndex: 0,
+  selectedOption: 0,
+  score: 0,
 };
 
 const reducer = (state, action) => {
@@ -28,21 +32,35 @@ const reducer = (state, action) => {
       const question = state.questions.find(
         (element) => element.number === action.payload.number
       );
+
       if (question) {
         question.status = action.payload.status;
         question.status_boton = action.payload.status_boton;
+        state.selectedOption = action.payload.selectedOption;
+        const answer = question.answers.find(
+          (element) => element.option === action.payload.selectedOption
+        );
+        if (answer.correct) {
+          state.score = state.score + 10;
+        }
       }
       return;
     }
-    case actions.GET_STATUS: {
-      const question = state.questions.find(
-        (element) => element.number === action.payload.number
-      );
-      if (question) {
-        return question.status;
-      }
+    case actions.SET_NEXT_QUESTION:
+      state.actualQuestionIndex = state.actualQuestionIndex + 1;
       return;
-    }
+
+    case actions.RESET_STATE:
+      state.actualQuestionIndex = 0;
+      state.score = 0;
+      state.selectedOption = 0;
+      const questions = state.questions.map((item) => ({
+        ...item,
+        status: "question",
+        status_boton: "true",
+      }));
+      state.questions = questions;
+      return;
     default:
       return;
   }

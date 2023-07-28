@@ -13,6 +13,34 @@
             "correct": false
           }
         ]
+      },
+      {
+        "number": 2,
+        "title": "¿Como se llama el perro de superman?",
+        "answers": [
+          { "option": "1", "description": "Doby", "correct": false },
+          { "option": "2", "description": "Alberto", "correct": false },
+          { "option": "3", "description": "El gato con botas", "correct": false },
+          {
+            "option": "4",
+            "description": "SuperRito",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "number": 3,
+        "title": "¿Cuanto es 2 + 2?",
+        "answers": [
+          { "option": "1", "description": "2", "correct": false },
+          { "option": "2", "description": "4", "correct": true },
+          { "option": "3", "description": "1", "correct": false },
+          {
+            "option": "4",
+            "description": "3",
+            "correct": false
+          }
+        ]
       }
     ]
   }
