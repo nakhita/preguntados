@@ -1,5 +1,5 @@
 import { produce } from "immer";
-import { useReducer, createContext } from "react";
+import { useReducer, createContext, useState } from "react";
 
 const QuestionContext = createContext({});
 
@@ -29,6 +29,7 @@ const reducer = (state, action) => {
       );
       if (question) {
         question.status = action.payload.status;
+        question.status_boton = action.payload.status_boton;
       }
       return;
     }

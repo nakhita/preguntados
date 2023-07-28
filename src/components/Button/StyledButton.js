@@ -13,7 +13,7 @@ export const StyledButton = styled.button`
   font-size: 20px;
   padding-top: 5px;
   padding-bottom: 10px;
-  cursor: pointer;
+  cursor: ${(props) => (props.disabled === false ? "pointer" : "not-allowed")};
   background-color: ${(props) =>
     props.variant === "correct"
       ? "green"
