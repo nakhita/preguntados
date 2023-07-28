@@ -1,5 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import { StyledTitle } from "./Title/StyledTitle";
+import { ButtonNext } from "./ButtonNext";
 import { StyledPanel, StyledPanelContainer } from "./Panel/StyledPanel";
 import QuestionContext, { actions } from "../context/questionContext";
 import { Question } from "./Question";
@@ -21,6 +22,7 @@ const QuestionsPanel = () => {
       {state.questions.length > 0 ? (
         <StyledPanel>
           <Question question={state.questions[0]}></Question>
+          {state.questions[0].status_boton ? <ButtonNext></ButtonNext> : ""}
         </StyledPanel>
       ) : (
         "No hay preguntas"

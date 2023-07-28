@@ -1,11 +1,12 @@
 import { produce } from "immer";
-import { useReducer, createContext, useState } from "react";
+import { useReducer, createContext } from "react";
 
 const QuestionContext = createContext({});
 
 const actions = {
   SET_QUESTIONS: "set-questions",
   SET_STATUS: "set-status",
+  GET_STATUS: "get-status",
 };
 
 const initialState = {
@@ -30,6 +31,15 @@ const reducer = (state, action) => {
       if (question) {
         question.status = action.payload.status;
         question.status_boton = action.payload.status_boton;
+      }
+      return;
+    }
+    case actions.GET_STATUS: {
+      const question = state.questions.find(
+        (element) => element.number === action.payload.number
+      );
+      if (question) {
+        return question.status;
       }
       return;
     }
