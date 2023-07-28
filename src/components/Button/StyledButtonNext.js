@@ -2,8 +2,7 @@ import { keyframes, styled } from "styled-components";
 
 const animacion = keyframes`
     to {
-      font-size: 15px;
-      width: 8%;
+      width: 9%;
     }
   `;
 export const StyledButtonNext = styled.button`

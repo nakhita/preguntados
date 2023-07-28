@@ -7,7 +7,7 @@ import { Question } from "./Question";
 
 const QuestionsPanel = () => {
   const [state, dispatch] = useContext(QuestionContext);
-
+  const puntaje = 0;
   useEffect(() => {
     fetch("/questions.json")
       .then((response) => response.json())
@@ -19,6 +19,7 @@ const QuestionsPanel = () => {
   return (
     <StyledPanelContainer>
       <StyledTitle>Preguntas y respuestas</StyledTitle>
+      <StyledTitle variant="subtitle">Puntaje : {puntaje}</StyledTitle>
       {state.questions.length > 0 ? (
         <StyledPanel>
           <Question question={state.questions[0]}></Question>
