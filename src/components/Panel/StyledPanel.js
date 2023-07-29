@@ -7,12 +7,13 @@ export const StyledPanel = styled.div`
   width: 50%;
   min-height: 400px;
   border: 2px solid;
-  background-color: #42929d;
+  background-color: ${({ theme }) => theme.panel.color.default};
 `;
 
 export const StyledPanelContainer = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  background-color: #fefff6;
+  min-height: 100vh;
+  background-color: ${({ theme }) => theme.fondo.color.default};
 `;

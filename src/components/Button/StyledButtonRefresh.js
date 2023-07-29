@@ -9,6 +9,7 @@ export const StyledButtonRefresh = styled.button`
   width: 10%;
   border: 2px solid;
   border-radius: 10px;
+  color: ${({ theme }) => theme.letra.color.default};
   font-size: 20px;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -16,7 +17,7 @@ export const StyledButtonRefresh = styled.button`
   transition: all 0.3s ease 0s;
   margin: 15px;
   margin-left: auto;
-  background-color: #f999f5;
+  background-color: ${({ theme }) => theme.button.refresh.color.default};
 
   &:hover {
     background-color: #ef94eb;

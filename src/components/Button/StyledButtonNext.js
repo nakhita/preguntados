@@ -7,8 +7,9 @@ const animacion = keyframes`
   `;
 export const StyledButtonNext = styled.button`
   width: 10%;
-  border: 2px solid;
+  border: 2px solid ${({ theme }) => theme.letra.color.default};
   border-radius: 10px;
+  color: ${({ theme }) => theme.letra.color.default};
   font-size: 20px;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -16,9 +17,10 @@ export const StyledButtonNext = styled.button`
   transition: all 0.3s ease 0s;
   margin: 15px;
   margin-left: auto;
+  background-color: ${({ theme }) => theme.button.next.color.default};
 
   &:hover {
-    background-color: aliceblue;
+    background-color: rgba(159, 163, 169, 1);
   }
   &:active {
     animation-direction: reverse;

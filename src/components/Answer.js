@@ -4,13 +4,13 @@ import { useContext, useState } from "react";
 
 export const Answer = ({ answer, question }) => {
   const [state, dispatch] = useContext(QuestionContext);
-  let variant = "";
+  let variant = "default";
   let boton_status = false;
   if (question.status === "answer") {
     if (state.selectedOption == answer.option || answer.correct) {
       variant = answer.correct ? "correct" : "incorrect";
     } else {
-      variant = "";
+      variant = "default";
     }
   }
   if (question.status_boton === "false") {
