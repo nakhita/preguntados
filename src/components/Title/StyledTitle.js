@@ -5,4 +5,5 @@ export const StyledTitle = styled.h1`
   text-align: center;
   justify-content: center;
   color: ${({ theme }) => theme.letra.color.default};
+  margin-top: 0px;
 `;

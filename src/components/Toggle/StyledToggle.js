@@ -9,7 +9,7 @@ export const StyledToggleCheckbox = styled.input.attrs({ type: "checkbox" })`
 `;
 
 export const StyledToggleLabel = styled.label`
-  background-color: #111;
+  background-color: ${({ theme }) => theme.button.label.color.fondoLabel};
   width: 50px;
   height: 26px;
   border-radius: 50px;
@@ -22,7 +22,7 @@ export const StyledToggleLabel = styled.label`
 `;
 
 export const StyledToggleIcon = styled.span`
-  color: #f1c40f;
+  color: ${({ theme }) => theme.button.label.color.icon};
 `;
 
 export const StyledToggleBall = styled.span`
@@ -31,10 +31,13 @@ export const StyledToggleBall = styled.span`
   height: 24px;
   position: absolute;
   left: 2px;
-  top: 2px;
+  top: 5px;
   border-radius: 50%;
   transition: transform 0.2s linear;
-  ${({ checked }) => checked && "transform: translateX(24px);"}
+  ${({ checked }) => checked && "transform: translateX(30px);"}
 `;
 
-export const StyledToggleContainer = styled.div``;
+export const StyledToggleContainer = styled.div`
+  margin-left: auto;
+  padding: 10px;
+`;

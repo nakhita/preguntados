@@ -1,4 +1,4 @@
-export const theme = {
+export const light = {
   button: {
     pregunta: {
       color: {
@@ -15,6 +15,12 @@ export const theme = {
     next: {
       color: {
         default: "#f4f4e1",
+      },
+    },
+    label: {
+      color: {
+        icon: "#fff",
+        fondoLabel: "#42929d",
       },
     },
   },
@@ -35,7 +41,7 @@ export const theme = {
   },
 };
 
-export const darkTheme = {
+export const dark = {
   button: {
     pregunta: {
       color: {
@@ -52,6 +58,12 @@ export const darkTheme = {
     next: {
       color: {
         default: "#6a6e73",
+      },
+    },
+    label: {
+      color: {
+        icon: "#f1c40f",
+        fondoLabel: "#1f2124",
       },
     },
   },

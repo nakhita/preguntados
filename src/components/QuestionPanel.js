@@ -6,12 +6,11 @@ import { StyledPanel, StyledPanelContainer } from "./Panel/StyledPanel";
 import QuestionContext, { actions } from "../context/questionContext";
 import { Question } from "./Question";
 import { ThemeProvider } from "styled-components";
-import { theme, darkTheme } from "../utils/theme";
+import { light, dark } from "../utils/theme";
 import { ToggleButton } from "./ToggleButton";
 
 const QuestionsPanel = () => {
   const [state, dispatch] = useContext(QuestionContext);
-  const puntaje = 0;
   useEffect(() => {
     fetch("/questions.json")
       .then((response) => response.json())
@@ -21,7 +20,7 @@ const QuestionsPanel = () => {
   }, []);
 
   return (
-    <ThemeProvider theme={darkTheme}>
+    <ThemeProvider theme={state.actualTheme}>
       <StyledPanelContainer>
         <ToggleButton></ToggleButton>
         <StyledTitle>Preguntas y respuestas</StyledTitle>

@@ -1,5 +1,7 @@
 import { produce } from "immer";
 import { useReducer, createContext } from "react";
+import { FaIgloo } from "react-icons/fa";
+import { light, dark } from "../utils/theme";
 
 const QuestionContext = createContext({});
 
@@ -8,6 +10,7 @@ const actions = {
   SET_STATUS: "set-status",
   SET_NEXT_QUESTION: "set-next-question",
   RESET_STATE: "reset-state",
+  SET_THEME: "set-theme",
 };
 
 const initialState = {
@@ -15,6 +18,8 @@ const initialState = {
   actualQuestionIndex: 0,
   selectedOption: 0,
   score: 0,
+  actualTheme: light,
+  checkedTheme: false,
 };
 
 const reducer = (state, action) => {
@@ -60,6 +65,11 @@ const reducer = (state, action) => {
         status_boton: "true",
       }));
       state.questions = questions;
+      return;
+    case actions.SET_THEME:
+      state.checkedTheme = !state.checkedTheme;
+      state.actualTheme = state.checkedTheme ? dark : light;
+      console.log(state.actualTheme);
       return;
     default:
       return;
