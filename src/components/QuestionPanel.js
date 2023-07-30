@@ -6,8 +6,9 @@ import { StyledPanel, StyledPanelContainer } from "./Panel/StyledPanel";
 import QuestionContext, { actions } from "../context/questionContext";
 import { Question } from "./Question";
 import { ThemeProvider } from "styled-components";
-import { light, dark } from "../utils/theme";
+
 import { ToggleButton } from "./ToggleButton";
+import CountdownTimer from "./Timer";
 
 const QuestionsPanel = () => {
   const [state, dispatch] = useContext(QuestionContext);
@@ -18,7 +19,6 @@ const QuestionsPanel = () => {
         dispatch({ type: actions.SET_QUESTIONS, payload: data.questions });
       });
   }, []);
-
   return (
     <ThemeProvider theme={state.actualTheme}>
       <StyledPanelContainer>
@@ -27,6 +27,7 @@ const QuestionsPanel = () => {
         <StyledTitle variant="subtitle">Puntaje : {state.score}</StyledTitle>
         {state.questions.length > 0 ? (
           <StyledPanel>
+            <CountdownTimer />
             <Question
               question={state.questions[state.actualQuestionIndex]}
             ></Question>

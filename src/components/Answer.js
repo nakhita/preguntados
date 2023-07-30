@@ -22,9 +22,8 @@ export const Answer = ({ answer, question }) => {
       disabled={boton_status}
       onClick={(e) => {
         dispatch({
-          type: actions.SET_STATUS,
+          type: actions.SET_STATUS_ACTUAL_QUESTION,
           payload: {
-            number: question.number,
             status: "answer",
             status_boton: "false",
             selectedOption: answer.option,

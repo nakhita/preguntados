@@ -39,6 +39,11 @@ export const light = {
       default: "#1f2124",
     },
   },
+  timer: {
+    color: {
+      default: "#f4f4e1",
+    },
+  },
 };
 
 export const dark = {
@@ -80,6 +85,11 @@ export const dark = {
   letra: {
     color: {
       default: "#dcdcdc",
+    },
+  },
+  timer: {
+    color: {
+      default: "#6a6e73",
     },
   },
 };

@@ -14,15 +14,24 @@ export const ToggleButton = () => {
 
   return (
     <StyledToggleContainer>
-      <StyledToggleCheckbox id="toggle" />
+      <StyledToggleCheckbox
+        id="toggle"
+        checked={state.checkedTheme}
+        onChange={(e) => {
+          dispatch({
+            type: actions.SET_THEME,
+          });
+        }}
+      />
       <StyledToggleLabel
         htmlFor="toggle"
+        /*
         onClick={(e) => {
           dispatch({
             type: actions.SET_THEME,
             payload: {},
           });
-        }}
+        }}*/
       >
         <StyledToggleIcon>
           <FaMoon />
